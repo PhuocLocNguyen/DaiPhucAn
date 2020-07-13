@@ -1,41 +1,24 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, Dimensions, FlatList} from 'react-native';
+import {View, StyleSheet, Dimensions, FlatList} from 'react-native';
+import CarViewProject from './CarViewProject';
 const DATA = [
   {
     id: '1',
-    title: 'First Item',
+    title: 'Thuận Hòa',
+    address: 'Đường DT741, Xã Tiến Hưng, Thành phố Đồng Xoài, Tỉnh Bình Phước',
+    img: require('../../assets/images/thuanhoa.jpg'),
   },
   {
     id: '2',
-    title: 'Second Item',
+    title: 'Đồng Phú',
+    address: '20 Trung Mỹ Tây 13, P. Trung Mỹ Tây, Q12, TPHCM',
+    img: require('../../assets/images/phuchung.jpg'),
   },
   {
     id: '3',
-    title: 'Third Item',
-  },
-  {
-    id: '4',
-    title: '4444444444444444444 Item',
-  },
-  {
-    id: '5',
-    title: '5555 Item',
-  },
-  {
-    id: '6',
-    title: '6666 Item',
-  },
-  {
-    id: '7',
-    title: '7777 Item',
-  },
-  {
-    id: '8',
-    title: '888 Item',
-  },
-  {
-    id: '9',
-    title: '999 Item',
+    title: 'Phúc Hưng',
+    address: 'Xã Minh Hưng, Huyện Chơn Thành, tỉnh Bình Phước.',
+    img: require('../../assets/images/dongphu.jpg'),
   },
 ];
 
@@ -47,8 +30,12 @@ export default class ListDuAn extends Component {
           data={DATA}
           horizontal={true}
           renderItem={({item, index, separators}) => (
-            <View style={{backgroundColor: 'white'}}>
-              <Text>{item.title}</Text>
+            <View>
+              <CarViewProject
+                title={item.title}
+                address={item.address}
+                img={item.img}
+              />
             </View>
           )}
         />
@@ -60,6 +47,5 @@ export default class ListDuAn extends Component {
 const styles = StyleSheet.create({
   container: {
     height: Dimensions.get('window').height / 3,
-    backgroundColor: 'blue',
   },
 });

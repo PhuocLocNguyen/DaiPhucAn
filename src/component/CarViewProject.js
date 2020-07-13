@@ -5,22 +5,19 @@ export default class CarViewProject extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image
-          style={styles.imgProject}
-          source={require('../../assets/images/thuanhoa.jpg')}
-        />
+        <Image style={styles.imgProject} source={this.props.img} />
         <View style={styles.groupTxtTitle}>
           <Text
             style={styles.txtTitleProject}
             numberOfLines={1}
             ellipsizeMode="tail">
-            Tân Lân Residence
+            {this.props.title}
           </Text>
           <Text
             style={styles.txtaddress}
             numberOfLines={2}
             ellipsizeMode="tail">
-            Đường tránh Cần Đước, thuộc xã Tân Lân, huyện Cần Đước, tỉnh Long An
+            {this.props.address}
           </Text>
         </View>
       </View>
@@ -30,12 +27,12 @@ export default class CarViewProject extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    height: Dimensions.get('window').height / 3,
+    height: Dimensions.get('window').height / 3.05,
     width: Dimensions.get('window').width / 1.6,
     backgroundColor: 'white',
     borderRadius: 10,
     overflow: 'hidden',
-    margin: 10,
+    marginLeft: 5,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,

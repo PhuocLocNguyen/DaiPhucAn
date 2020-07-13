@@ -13,13 +13,20 @@ export default class Title extends Component {
 }
 const styles = StyleSheet.create({
   container: {
-    height: Dimensions.get('window').height / 12,
-    backgroundColor: '#EEF4ED',
+    height: Dimensions.get('window').height / 15,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     margin: 5,
     borderRadius: 8,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 0.5,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 2.5,
   },
   text: {
     marginLeft: 10,
