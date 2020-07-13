@@ -3,6 +3,7 @@ import {Text, View, StyleSheet, ScrollView, Dimensions} from 'react-native';
 import Header from '../component/Header';
 import Title from '../component/Title';
 import ListDuAn from '../component/ListDuAn';
+import ListCounselors from '../component/ListCounselors';
 
 export default class Home extends Component {
   render() {
@@ -13,9 +14,7 @@ export default class Home extends Component {
           <Title title="Dự án" seeMore="Xem thêm >" />
           <ListDuAn />
           <Title title="Tư vấn viên" seeMore="Xem thêm >" />
-          <View style={styles.listTuVanVien}>
-            <Text>list tu van vien</Text>
-          </View>
+          <ListCounselors />
           <Title title="Tin Tức" seeMore="Xem thêm >" />
           <View style={styles.listTinTuc}>
             <Text>list tin tuc</Text>

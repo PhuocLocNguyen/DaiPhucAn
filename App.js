@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import {View, StyleSheet} from 'react-native';
 import Home from './src/screen/Home';
-import CarViewProject from './src/component/CarViewProject';
+import CarViewCounselor from './src/component/CarViewCounselor';
 
 export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {/* <Home /> */}
-        <CarViewProject />
+        <Home />
+        {/* <CarViewCounselor /> */}
       </View>
     );
   }
