@@ -11,7 +11,7 @@ export default class CarViewCounselor extends Component {
             style={styles.imgCounselor}
           />
         </View>
-        <Text style={styles.txtName}>Oanh</Text>
+        <Text style={styles.txtName}>Loc</Text>
       </View>
     );
   }

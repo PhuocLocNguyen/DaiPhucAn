@@ -4,6 +4,7 @@ import Header from '../component/Header';
 import Title from '../component/Title';
 import ListDuAn from '../component/ListDuAn';
 import ListCounselors from '../component/ListCounselors';
+import ListNews from '../component/ListNews';
 
 export default class Home extends Component {
   render() {
@@ -16,9 +17,7 @@ export default class Home extends Component {
           <Title title="Tư vấn viên" seeMore="Xem thêm >" />
           <ListCounselors />
           <Title title="Tin Tức" seeMore="Xem thêm >" />
-          <View style={styles.listTinTuc}>
-            <Text>list tin tuc</Text>
-          </View>
+          <ListNews />
         </ScrollView>
       </View>
     );
@@ -29,17 +28,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#ffffff',
-  },
-  listDuAn: {
-    height: Dimensions.get('window').height / 3,
-    backgroundColor: 'blue',
-  },
-  listTuVanVien: {
-    height: Dimensions.get('window').height / 5,
-    backgroundColor: 'blue',
-  },
-  listTinTuc: {
-    height: Dimensions.get('window').height / 2,
-    backgroundColor: 'blue',
   },
 });
