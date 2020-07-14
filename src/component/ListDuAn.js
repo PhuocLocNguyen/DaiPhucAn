@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, Dimensions, FlatList} from 'react-native';
-import CardViewProject from './CardViewProject';
+import CardViewProject from './cardcomponent/CardViewProject';
 const DATA = [
   {
     id: '1',

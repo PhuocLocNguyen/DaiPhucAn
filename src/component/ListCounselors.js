@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, Dimensions, FlatList} from 'react-native';
-import CardViewCounselor from './CardViewCounselor';
+import CardViewCounselor from './cardcomponent/CardViewCounselor';
 const DATA = [
   {
     id: '1',

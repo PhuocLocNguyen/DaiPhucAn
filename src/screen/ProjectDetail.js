@@ -8,23 +8,6 @@ export default class ProjectDetail extends Component {
         <Header />
         <Text>Dự án</Text>
         <Text>Thuận Hòa</Text>
-        <View>
-          <Text>Thông tin cơ bản</Text>
-        </View>
-        <View>
-          <View>
-            <Text>Thuận Hòa</Text>
-            <Text>Dự án</Text>
-            <Text>Thuận Hòa</Text>
-            <Text>Thuận Hòa</Text>
-          </View>
-          <View>
-            <Text>Thuận Hòa</Text>
-            <Text>Dự án</Text>
-            <Text>Thuận Hòa</Text>
-            <Text>Thuận Hòa</Text>
-          </View>
-        </View>
       </View>
     );
   }

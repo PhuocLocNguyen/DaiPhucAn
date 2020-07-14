@@ -7,7 +7,7 @@ export default class CardViewCounselor extends Component {
       <View style={styles.container}>
         <View style={styles.containerImageCounselor}>
           <Image
-            source={require('../../assets/images/dongphu.jpg')}
+            source={require('../../../assets/images/dongphu.jpg')}
             style={styles.imgCounselor}
           />
         </View>
