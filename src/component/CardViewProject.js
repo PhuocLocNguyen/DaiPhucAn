@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Text, View, Image, StyleSheet, Dimensions} from 'react-native';
 
-export default class CarViewProject extends Component {
+export default class CardViewProject extends Component {
   render() {
     return (
       <View style={styles.container}>
