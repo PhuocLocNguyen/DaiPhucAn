@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, ScrollView, Dimensions} from 'react-native';
+import {View, StyleSheet, ScrollView} from 'react-native';
 import Header from '../component/Header';
 import Title from '../component/Title';
 import ListDuAn from '../component/ListDuAn';

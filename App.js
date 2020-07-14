@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import {View, StyleSheet} from 'react-native';
 import Home from './src/screen/Home';
 import ProjectDetail from './src/screen/ProjectDetail';
-import CardProjectbasicInformation from './src/component/cardcomponent/CardProjectbasicInformation';
-
+import CardProjectDetail from './src/component/cardcomponent/CardProjectDetail';
 export default class App extends Component {
   render() {
     return (

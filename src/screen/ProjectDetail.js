@@ -1,15 +1,19 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {View, StyleSheet, ScrollView} from 'react-native';
 import Header from '../component/Header';
 import CardProjectbasicInformation from '../component/cardcomponent/CardProjectbasicInformation';
 import CardNameProject from '../component/cardcomponent/CardNameProject';
+import CardProjectDetail from '../component/cardcomponent/CardProjectDetail';
 export default class ProjectDetail extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Header />
-        <CardNameProject />
-        <CardProjectbasicInformation />
+        <ScrollView>
+          <Header />
+          <CardNameProject />
+          <CardProjectbasicInformation />
+          <CardProjectDetail />
+        </ScrollView>
       </View>
     );
   }
