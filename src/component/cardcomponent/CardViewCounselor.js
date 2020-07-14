@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, Dimensions, Image} from 'react-native';
+import {Text, View, StyleSheet, Image} from 'react-native';
+import {height} from '../Dimensions';
 
 export default class CardViewCounselor extends Component {
   render() {
@@ -16,32 +17,31 @@ export default class CardViewCounselor extends Component {
     );
   }
 }
-
 const styles = StyleSheet.create({
   container: {
-    height: Dimensions.get('window').height / 5,
-    width: Dimensions.get('window').height / 5,
+    height: height / 5,
+    width: height / 5,
     justifyContent: 'center',
     alignItems: 'center',
     marginVertical: 5,
   },
   containerImageCounselor: {
     flex: 4,
-    height: Dimensions.get('window').height / 6,
-    width: Dimensions.get('window').height / 6,
-    borderRadius: Dimensions.get('window').height / 3,
+    height: height / 6,
+    width: height / 6,
+    borderRadius: height / 3,
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 1,
     borderColor: '#134074',
   },
   imgCounselor: {
-    width: Dimensions.get('window').height / 6.5,
-    height: Dimensions.get('window').height / 6.5,
-    borderRadius: Dimensions.get('window').height / 4,
+    width: height / 6.5,
+    height: height / 6.5,
+    borderRadius: height / 4,
   },
   txtName: {
     flex: 1,
-    fontSize: Dimensions.get('window').height / 37,
+    fontSize: height / 37,
   },
 });

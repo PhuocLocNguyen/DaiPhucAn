@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, Dimensions, FlatList} from 'react-native';
+import {View, StyleSheet, FlatList} from 'react-native';
+import {height} from './Dimensions';
 import CardViewNews from './cardcomponent/CardViewNews';
 const DATA = [
   {
@@ -67,9 +68,8 @@ export default class ListNews extends Component {
     );
   }
 }
-
 const styles = StyleSheet.create({
   container: {
-    height: Dimensions.get('window').height,
+    height,
   },
 });

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {View, Dimensions, StyleSheet, Image} from 'react-native';
+import {View, StyleSheet, Image} from 'react-native';
+import {height} from './Dimensions';
 
 export default class Header extends Component {
   render() {
@@ -13,10 +14,9 @@ export default class Header extends Component {
     );
   }
 }
-
 const styles = StyleSheet.create({
   container: {
-    height: Dimensions.get('window').height / 3.5,
+    height: height / 3.5,
   },
   imgHeader: {
     flex: 1,

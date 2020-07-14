@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet} from 'react-native';
+import {height, width} from '../Dimensions';
 
 export default class CardProjectbasicInformation extends Component {
   render() {
@@ -26,7 +27,6 @@ export default class CardProjectbasicInformation extends Component {
     );
   }
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,

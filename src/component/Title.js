@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, Dimensions} from 'react-native';
+import {Text, View, StyleSheet} from 'react-native';
+import {height} from './Dimensions';
 
 export default class Title extends Component {
   render() {
@@ -13,7 +14,7 @@ export default class Title extends Component {
 }
 const styles = StyleSheet.create({
   container: {
-    height: Dimensions.get('window').height / 15,
+    height: height / 15,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, Dimensions, FlatList} from 'react-native';
+import {View, StyleSheet, FlatList} from 'react-native';
 import CardViewProject from './cardcomponent/CardViewProject';
+import {height} from './Dimensions';
 const DATA = [
   {
     id: '1',
@@ -46,6 +47,6 @@ export default class ListDuAn extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    height: Dimensions.get('window').height / 3,
+    height: height / 3,
   },
 });

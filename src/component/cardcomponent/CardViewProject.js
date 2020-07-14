@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Text, View, Image, StyleSheet, Dimensions} from 'react-native';
+import {Text, View, Image, StyleSheet} from 'react-native';
+import {height, width} from '../Dimensions';
 
 export default class CardViewProject extends Component {
   render() {
@@ -24,11 +25,10 @@ export default class CardViewProject extends Component {
     );
   }
 }
-
 const styles = StyleSheet.create({
   container: {
-    height: Dimensions.get('window').height / 3.05,
-    width: Dimensions.get('window').width / 1.6,
+    height: height / 3.05,
+    width: width / 1.6,
     backgroundColor: 'white',
     borderRadius: 10,
     overflow: 'hidden',
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   },
   imgProject: {
     resizeMode: 'stretch',
-    width: Dimensions.get('window').width / 1.6,
+    width: width / 1.6,
     flex: 5,
   },
   groupTxtTitle: {
