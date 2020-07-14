@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, Dimensions, FlatList} from 'react-native';
-import CarViewCounselor from './CarViewCounselor';
+import CardViewCounselor from './CardViewCounselor';
 const DATA = [
   {
     id: '1',
@@ -43,7 +43,7 @@ export default class ListCounselors extends Component {
           horizontal={true}
           renderItem={({item, index, separators}) => (
             <View>
-              <CarViewCounselor name={item.name} img={item.img} />
+              <CardViewCounselor name={item.name} img={item.img} />
             </View>
           )}
         />

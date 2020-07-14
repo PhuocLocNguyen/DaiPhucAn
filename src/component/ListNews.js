@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, Dimensions, FlatList} from 'react-native';
-import CarViewNews from './CarViewNews';
+import CardViewNews from './CardViewNews';
 const DATA = [
   {
     id: '1',
@@ -55,7 +55,7 @@ export default class ListNews extends Component {
           windowSize={2}
           renderItem={({item, index, separators}) => (
             <View>
-              <CarViewNews
+              <CardViewNews
                 title={item.title}
                 address={item.address}
                 img={item.img}

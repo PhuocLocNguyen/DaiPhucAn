@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, Dimensions, FlatList} from 'react-native';
-import CarViewProject from './CarViewProject';
+import CardViewProject from './CardViewProject';
 const DATA = [
   {
     id: '1',
@@ -31,7 +31,7 @@ export default class ListDuAn extends Component {
           horizontal={true}
           renderItem={({item, index, separators}) => (
             <View>
-              <CarViewProject
+              <CardViewProject
                 title={item.title}
                 address={item.address}
                 img={item.img}

@@ -16,7 +16,7 @@ export default class Header extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    height: Dimensions.get('window').height / 4,
+    height: Dimensions.get('window').height / 3.5,
   },
   imgHeader: {
     flex: 1,
