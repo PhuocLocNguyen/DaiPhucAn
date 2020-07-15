@@ -4,6 +4,7 @@ import Header from '../component/Header';
 import CardProjectbasicInformation from '../component/cardcomponent/CardProjectbasicInformation';
 import CardNameProject from '../component/cardcomponent/CardNameProject';
 import CardProjectDetail from '../component/cardcomponent/CardProjectDetail';
+import CardDescription from '../component/cardcomponent/CardDescription';
 export default class ProjectDetail extends Component {
   render() {
     return (
@@ -13,6 +14,7 @@ export default class ProjectDetail extends Component {
           <CardNameProject />
           <CardProjectbasicInformation />
           <CardProjectDetail />
+          <CardDescription />
         </ScrollView>
       </View>
     );

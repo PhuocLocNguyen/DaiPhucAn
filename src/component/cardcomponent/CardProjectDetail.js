@@ -39,16 +39,15 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   groupInformation: {
-    flex: 3,
+    flex: 8,
     backgroundColor: '#EEF4ED',
   },
   titleInformation: {
-    height: height / 1.3 / 10,
+    flex: 1,
     justifyContent: 'center',
-    marginLeft: 5,
   },
   textInformation: {
     fontSize: 15,
-    marginRight: 5,
+    marginHorizontal: 5,
   },
 });
