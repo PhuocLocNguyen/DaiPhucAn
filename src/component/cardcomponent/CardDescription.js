@@ -7,7 +7,7 @@ export default class CardDescription extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.titleInformation}>
-          <Text style={styles.textInformation}>Mô tả</Text>
+          <Text style={styles.textInformation}>{this.props.title}</Text>
         </View>
         <View style={styles.groupInformation}>
           <Text style={styles.textDescription}>

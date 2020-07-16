@@ -5,12 +5,13 @@ import ProjectDetail from './src/screen/ProjectDetail';
 import CardProjectDetail from './src/component/cardcomponent/CardProjectDetail';
 import CardLocation from './src/component/cardcomponent/CardLocation';
 import Test from './src/component/cardcomponent/Test';
+import InfoCounselors from './src/screen/InfoCounselors';
 export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
         {/* <Home /> */}
-        <ProjectDetail />
+        <InfoCounselors />
       </View>
     );
   }

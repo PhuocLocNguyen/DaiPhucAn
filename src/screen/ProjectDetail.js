@@ -15,7 +15,7 @@ export default class ProjectDetail extends Component {
           <CardNameProject />
           <CardProjectbasicInformation />
           <CardProjectDetail />
-          <CardDescription />
+          <CardDescription title="Mô tả" />
           <CardLocation />
         </ScrollView>
       </View>
