@@ -6,13 +6,16 @@ export default class CardViewProject extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image style={styles.imgProject} source={this.props.img} />
+        <Image
+          style={styles.imgProject}
+          source={require('../../../assets/images/dongphu.jpg')}
+        />
         <View style={styles.groupTxtTitle}>
           <Text
             style={styles.txtTitleProject}
             numberOfLines={1}
             ellipsizeMode="tail">
-            {this.props.title}
+            {this.props.name}
           </Text>
           <Text
             style={styles.txtaddress}

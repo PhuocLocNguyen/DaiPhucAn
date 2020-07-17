@@ -3,6 +3,7 @@ import {View, StyleSheet, FlatList, TouchableOpacity} from 'react-native';
 import CardViewProject from './cardcomponent/CardViewProject';
 import {height} from './Dimensions';
 import {connect} from 'react-redux';
+import {actionCreator} from '../redux/action/actionCreator';
 const DATA = [
   {
     id: '1',
@@ -29,16 +30,18 @@ class ListDuAn extends Component {
     return (
       <View style={styles.container}>
         <FlatList
-          data={DATA}
+          extraData={this.props.projects}
+          keyExtractor={(item, index) => item._id.toString()}
+          data={this.props.projects}
           horizontal={true}
           renderItem={({item, index, separators}) => (
             <View>
               <TouchableOpacity
                 onPress={() => this.props.navigation.navigate('ProjectDetail')}>
                 <CardViewProject
-                  title={item.title}
-                  address={item.address}
-                  img={item.img}
+                  name={item.ten_du_an}
+                  address={item.vi_tri}
+                  img={item.hinh_anh[1]}
                 />
               </TouchableOpacity>
             </View>
@@ -56,7 +59,7 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = function (state) {
-  return {count: state};
+  return {projects: state.projects};
 };
 
-export default connect(mapStateToProps)(ListDuAn);
+export default connect(mapStateToProps, actionCreator)(ListDuAn);

@@ -1,18 +1,17 @@
 import React, {Component} from 'react';
-import {
-  View,
-  StyleSheet,
-  ScrollView,
-  TouchableOpacity,
-  Text,
-} from 'react-native';
+import {View, StyleSheet, ScrollView} from 'react-native';
 import Header from '../component/Header';
 import Title from '../component/Title';
 import ListDuAn from '../component/ListDuAn';
 import ListCounselors from '../component/ListCounselors';
 import ListNews from '../component/ListNews';
+import {connect} from 'react-redux';
+import {actionCreator} from '../redux/action/actionCreator';
 
-export default class Home extends Component {
+class Home extends Component {
+  componentDidMount() {
+    this.props.fetchDataProjects();
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -36,3 +35,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
   },
 });
+
+const mapStateToProps = function (state) {
+  return {projects: state};
+};
+
+export default connect(mapStateToProps, actionCreator)(Home);

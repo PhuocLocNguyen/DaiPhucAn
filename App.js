@@ -10,17 +10,10 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {Provider} from 'react-redux';
 import store from './src/redux/store';
-import axios from 'axios';
 
 const Stack = createStackNavigator();
 
 export default class App extends Component {
-  componentDidMount() {
-    axios
-      .get('http://192.168.1.4:4000/project')
-      .then((response) => console.log(response.data.projects))
-      .catch((error) => console.log(error));
-  }
   render() {
     return (
       <View style={styles.container}>
