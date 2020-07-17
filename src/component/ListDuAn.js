@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {View, StyleSheet, FlatList, TouchableOpacity} from 'react-native';
 import CardViewProject from './cardcomponent/CardViewProject';
 import {height} from './Dimensions';
+import {connect} from 'react-redux';
 const DATA = [
   {
     id: '1',
@@ -23,7 +24,7 @@ const DATA = [
   },
 ];
 
-export default class ListDuAn extends Component {
+class ListDuAn extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -53,3 +54,9 @@ const styles = StyleSheet.create({
     height: height / 3,
   },
 });
+
+const mapStateToProps = function (state) {
+  return {count: state};
+};
+
+export default connect(mapStateToProps)(ListDuAn);

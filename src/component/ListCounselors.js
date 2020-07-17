@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {View, StyleSheet, FlatList, TouchableOpacity} from 'react-native';
 import CardViewCounselor from './cardcomponent/CardViewCounselor';
 import {height} from './Dimensions';
+import {connect} from 'react-redux';
 const DATA = [
   {
     id: '1',
@@ -35,7 +36,7 @@ const DATA = [
   },
 ];
 
-export default class ListCounselors extends Component {
+class ListCounselors extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -62,3 +63,9 @@ const styles = StyleSheet.create({
     height: height / 5,
   },
 });
+
+const mapStateToProps = function (state) {
+  return {count: state};
+};
+
+export default connect(mapStateToProps)(ListCounselors);
