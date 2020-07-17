@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, FlatList} from 'react-native';
+import {View, StyleSheet, FlatList, TouchableOpacity} from 'react-native';
 import CardViewCounselor from './cardcomponent/CardViewCounselor';
 import {height} from './Dimensions';
 const DATA = [
@@ -44,7 +44,12 @@ export default class ListCounselors extends Component {
           horizontal={true}
           renderItem={({item, index, separators}) => (
             <View>
-              <CardViewCounselor name={item.name} img={item.img} />
+              <TouchableOpacity
+                onPress={() =>
+                  this.props.navigation.navigate('InfoCounselors')
+                }>
+                <CardViewCounselor name={item.name} img={item.img} />
+              </TouchableOpacity>
             </View>
           )}
         />

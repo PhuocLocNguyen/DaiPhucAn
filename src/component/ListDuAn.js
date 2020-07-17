@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, FlatList} from 'react-native';
+import {View, StyleSheet, FlatList, TouchableOpacity} from 'react-native';
 import CardViewProject from './cardcomponent/CardViewProject';
 import {height} from './Dimensions';
 const DATA = [
@@ -32,11 +32,14 @@ export default class ListDuAn extends Component {
           horizontal={true}
           renderItem={({item, index, separators}) => (
             <View>
-              <CardViewProject
-                title={item.title}
-                address={item.address}
-                img={item.img}
-              />
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('ProjectDetail')}>
+                <CardViewProject
+                  title={item.title}
+                  address={item.address}
+                  img={item.img}
+                />
+              </TouchableOpacity>
             </View>
           )}
         />

@@ -1,5 +1,11 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, ScrollView} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+  Text,
+} from 'react-native';
 import Header from '../component/Header';
 import Title from '../component/Title';
 import ListDuAn from '../component/ListDuAn';
@@ -13,11 +19,11 @@ export default class Home extends Component {
         <ScrollView>
           <Header />
           <Title title="Dự án" seeMore="Xem thêm >" />
-          <ListDuAn />
+          <ListDuAn navigation={this.props.navigation} />
           <Title title="Tư vấn viên" seeMore="Xem thêm >" />
-          <ListCounselors />
+          <ListCounselors navigation={this.props.navigation} />
           <Title title="Tin Tức" seeMore="Xem thêm >" />
-          <ListNews />
+          {/* <ListNews /> */}
         </ScrollView>
       </View>
     );
