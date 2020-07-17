@@ -8,16 +8,19 @@ import Test from './src/component/cardcomponent/Test';
 import InfoCounselors from './src/screen/InfoCounselors';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
-import {createStore} from 'redux';
 import {Provider} from 'react-redux';
+import store from './src/redux/store';
+import axios from 'axios';
 
 const Stack = createStackNavigator();
 
-const store = createStore((state = 0, action) => {
-  return state;
-});
-
 export default class App extends Component {
+  componentDidMount() {
+    axios
+      .get('http://192.168.1.4:4000/project')
+      .then((response) => console.log(response.data.projects))
+      .catch((error) => console.log(error));
+  }
   render() {
     return (
       <View style={styles.container}>
