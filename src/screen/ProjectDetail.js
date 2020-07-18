@@ -6,8 +6,14 @@ import CardNameProject from '../component/cardcomponent/CardNameProject';
 import CardProjectDetail from '../component/cardcomponent/CardProjectDetail';
 import CardDescription from '../component/cardcomponent/CardDescription';
 import CardLocation from '../component/cardcomponent/CardLocation';
-export default class ProjectDetail extends Component {
+import {connect} from 'react-redux';
+import {actionCreator} from '../redux/action/actionCreator';
+class ProjectDetail extends Component {
+  componentDidMount() {
+    this.props.fetchDataProjectFindByID(this.props.route.params._id);
+  }
   render() {
+    const {mo_ta} = this.props.project;
     return (
       <View style={styles.container}>
         <ScrollView>
@@ -15,7 +21,7 @@ export default class ProjectDetail extends Component {
           <CardNameProject />
           <CardProjectbasicInformation />
           <CardProjectDetail />
-          <CardDescription title="Mô tả" />
+          <CardDescription title="Mô tả" description={mo_ta} />
           <CardLocation />
         </ScrollView>
       </View>
@@ -28,3 +34,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
+const mapStateToProps = function (state) {
+  return {project: state.project};
+};
+
+export default connect(mapStateToProps, actionCreator)(ProjectDetail);

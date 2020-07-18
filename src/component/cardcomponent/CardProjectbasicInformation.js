@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 import {height} from '../Dimensions';
-
-export default class CardProjectbasicInformation extends Component {
+import {connect} from 'react-redux';
+import {actionCreator} from '../../redux/action/actionCreator';
+class CardProjectbasicInformation extends Component {
   render() {
+    const {chu_dau_tu, loai_hinh, don_vi_phan_phoi} = this.props.project;
     return (
       <View style={styles.container}>
         <View style={styles.titleInformation}>
@@ -15,7 +17,7 @@ export default class CardProjectbasicInformation extends Component {
               <Text style={styles.textForm}>Chủ đầu tư</Text>
             </View>
             <View style={styles.containerTextInformation}>
-              <Text style={styles.textInformation}>Tap doan abcasd</Text>
+              <Text style={styles.textInformation}>{chu_dau_tu}</Text>
             </View>
           </View>
           <View style={styles.groupTextInformation}>
@@ -23,15 +25,15 @@ export default class CardProjectbasicInformation extends Component {
               <Text style={styles.textForm}>Loại hình</Text>
             </View>
             <View style={styles.containerTextInformation}>
-              <Text style={styles.textInformation}>Tap doan abcasds</Text>
+              <Text style={styles.textInformation}>{loai_hinh}</Text>
             </View>
           </View>
           <View style={styles.groupTextInformation}>
             <View style={styles.containerTextForm}>
-              <Text style={styles.textForm}>Số căn</Text>
+              <Text style={styles.textForm}>Phân phối</Text>
             </View>
             <View style={styles.containerTextInformation}>
-              <Text style={styles.textInformation}>Tap doan abcasd</Text>
+              <Text style={styles.textInformation}>{don_vi_phan_phoi}</Text>
             </View>
           </View>
         </View>
@@ -68,7 +70,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   containerTextInformation: {
-    flex: 2,
+    flex: 3,
     justifyContent: 'center',
   },
   textForm: {
@@ -85,3 +87,11 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
 });
+const mapStateToProps = function (state) {
+  return {project: state.project};
+};
+
+export default connect(
+  mapStateToProps,
+  actionCreator,
+)(CardProjectbasicInformation);

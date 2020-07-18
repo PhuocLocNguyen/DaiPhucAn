@@ -1,6 +1,6 @@
 export default function projectReducer(state = [], action) {
-  if (action.type === 'FETCH_DATA_PROJECT') {
-    return action.projects;
+  if (action.type === 'FIND_BY_ID') {
+    return action.project;
   }
   return state;
 }

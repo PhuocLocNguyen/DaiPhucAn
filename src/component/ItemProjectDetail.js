@@ -9,7 +9,7 @@ export default class ItemProjectDetail extends Component {
           <Text style={styles.textForm}>{this.props.titleDetail}</Text>
         </View>
         <View style={styles.containerTextInformation}>
-          <Text style={styles.textInformation}>5.555</Text>
+          <Text style={styles.textInformation}>{this.props.content}</Text>
         </View>
       </View>
     );
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0.3,
   },
   containerTextForm: {
-    flex: 1.8,
+    flex: 1,
     justifyContent: 'center',
   },
   textForm: {

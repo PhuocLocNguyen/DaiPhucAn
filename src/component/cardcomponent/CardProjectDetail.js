@@ -2,22 +2,36 @@ import React, {Component} from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 import {height} from '../Dimensions';
 import ItemProjectDetail from '../ItemProjectDetail';
-export default class CardProjectDetail extends Component {
+import {connect} from 'react-redux';
+import {actionCreator} from '../../redux/action/actionCreator';
+class CardProjectDetail extends Component {
   render() {
+    const {
+      quy_mo,
+      so_luong,
+      dien_tich_phan_lo,
+      hinh_thuc_xay_dung,
+      ngan_hang,
+      phap_ly,
+    } = this.props.project;
     return (
       <View style={styles.container}>
         <View style={styles.titleInformation}>
           <Text style={styles.textInformation}>Thông tin chi tiết</Text>
         </View>
         <View style={styles.groupInformation}>
-          <ItemProjectDetail titleDetail="Tổng diện tích dự án" />
-          <ItemProjectDetail titleDetail="Diện tích sàn xây dựng" />
-          <ItemProjectDetail titleDetail="DT công viên cây xanh" />
-          <ItemProjectDetail titleDetail="DT cây xanh trên công trình" />
-          <ItemProjectDetail titleDetail="DT giao thông, sân bãi" />
-          <ItemProjectDetail titleDetail="Mật độ phủ xanh" />
-          <ItemProjectDetail titleDetail="Mật độ xây dựng" />
-          <ItemProjectDetail titleDetail="Quy mô dự án" />
+          <ItemProjectDetail titleDetail="Quy mô" content={quy_mo} />
+          <ItemProjectDetail titleDetail="Số lượng" content={so_luong} />
+          <ItemProjectDetail
+            titleDetail="Diện tích phân lô"
+            content={dien_tich_phan_lo}
+          />
+          <ItemProjectDetail
+            titleDetail="Hình thức xây dựng"
+            content={hinh_thuc_xay_dung}
+          />
+          <ItemProjectDetail titleDetail="Ngân hàng" content={ngan_hang} />
+          <ItemProjectDetail titleDetail="Pháp Lý" content={phap_ly} />
         </View>
       </View>
     );
@@ -51,3 +65,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
   },
 });
+const mapStateToProps = function (state) {
+  return {project: state.project};
+};
+
+export default connect(mapStateToProps, actionCreator)(CardProjectDetail);

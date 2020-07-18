@@ -8,7 +8,9 @@ export default class CardViewProject extends Component {
       <View style={styles.container}>
         <Image
           style={styles.imgProject}
-          source={require('../../../assets/images/dongphu.jpg')}
+          source={{
+            uri: this.props.img,
+          }}
         />
         <View style={styles.groupTxtTitle}>
           <Text

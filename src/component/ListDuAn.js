@@ -4,26 +4,6 @@ import CardViewProject from './cardcomponent/CardViewProject';
 import {height} from './Dimensions';
 import {connect} from 'react-redux';
 import {actionCreator} from '../redux/action/actionCreator';
-const DATA = [
-  {
-    id: '1',
-    title: 'Thuận Hòa',
-    address: 'Đường DT741, Xã Tiến Hưng, Thành phố Đồng Xoài, Tỉnh Bình Phước',
-    img: require('../../assets/images/thuanhoa.jpg'),
-  },
-  {
-    id: '2',
-    title: 'Đồng Phú',
-    address: '20 Trung Mỹ Tây 13, P. Trung Mỹ Tây, Q12, TPHCM',
-    img: require('../../assets/images/phuchung.jpg'),
-  },
-  {
-    id: '3',
-    title: 'Phúc Hưng',
-    address: 'Xã Minh Hưng, Huyện Chơn Thành, tỉnh Bình Phước.',
-    img: require('../../assets/images/dongphu.jpg'),
-  },
-];
 
 class ListDuAn extends Component {
   render() {
@@ -37,11 +17,15 @@ class ListDuAn extends Component {
           renderItem={({item, index, separators}) => (
             <View>
               <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('ProjectDetail')}>
+                onPress={() =>
+                  this.props.navigation.navigate('ProjectDetail', {
+                    _id: item._id.toString(),
+                  })
+                }>
                 <CardViewProject
                   name={item.ten_du_an}
                   address={item.vi_tri}
-                  img={item.hinh_anh[1]}
+                  img={item.hinh_anh[2]}
                 />
               </TouchableOpacity>
             </View>

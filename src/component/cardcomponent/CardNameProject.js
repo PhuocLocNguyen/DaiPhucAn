@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 import {height} from '../Dimensions';
-
-export default class CardNameProject extends Component {
+import {connect} from 'react-redux';
+import {actionCreator} from '../../redux/action/actionCreator';
+class CardNameProject extends Component {
   render() {
+    const {ten_du_an, vi_tri} = this.props.project;
     return (
       <View style={styles.container}>
         <View style={styles.GroupTextTitle}>
@@ -16,12 +18,10 @@ export default class CardNameProject extends Component {
         </View>
 
         <View style={styles.containerTextName}>
-          <Text style={styles.textName}>THUẬN HOÀ LUCKY HOME</Text>
+          <Text style={styles.textName}>{ten_du_an}</Text>
         </View>
         <View style={styles.containerTextAddress}>
-          <Text style={styles.textAddress}>
-            Đường DT741, Xã Tiến Hưng, Thành phố Đồng Xoài, Tỉnh Bình Phước
-          </Text>
+          <Text style={styles.textAddress}>{vi_tri}</Text>
         </View>
       </View>
     );
@@ -77,3 +77,9 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
   },
 });
+
+const mapStateToProps = function (state) {
+  return {project: state.project};
+};
+
+export default connect(mapStateToProps, actionCreator)(CardNameProject);

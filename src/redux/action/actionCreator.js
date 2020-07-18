@@ -8,11 +8,11 @@ const axiosInstance = axios.create({
 
 const Endpoint = EndpointFactory(axiosInstance);
 
-const wordEndPoint = new Endpoint('/project');
+const projectEndPoint = new Endpoint('/project');
 
 function fetchDataProjects() {
   return (dispatch) => {
-    wordEndPoint
+    projectEndPoint
       .get()
       .then((reponse) => {
         const data = reponse.data;
@@ -25,6 +25,23 @@ function fetchDataProjects() {
   };
 }
 
+function fetchDataProjectFindByID(_id) {
+  const projectFindByIDEndPoint = new Endpoint('/project/' + _id);
+  return (dispatch) => {
+    projectFindByIDEndPoint
+      .get()
+      .then((reponse) => {
+        const data = reponse.data;
+        const {success, project} = data;
+        if (success && project) {
+          dispatch({type: actionType.FIND_BY_ID, project});
+        }
+      })
+      .catch((error) => console.log(error.message));
+  };
+}
+
 export const actionCreator = {
   fetchDataProjects,
+  fetchDataProjectFindByID,
 };

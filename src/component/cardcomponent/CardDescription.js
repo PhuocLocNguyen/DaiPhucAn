@@ -10,15 +10,7 @@ export default class CardDescription extends Component {
           <Text style={styles.textInformation}>{this.props.title}</Text>
         </View>
         <View style={styles.groupInformation}>
-          <Text style={styles.textDescription}>
-            Với quy mô 2,4 ha, số lượng sản phẩm cung ứng 112 lô đất nền có diện
-            tích đa dạng trung bình từ 106 – 180m2, Khu dân cư Thuận Hoà Lucky
-            Home có pháp lý hoàn chỉnh, sổ đỏ riêng từng lô, xây dựng tự do, cơ
-            sở hạ tầng nội khu hoàn thiện. Sở hữu vị trí đắc địa là cửa ngõ giao
-            thương giữa TP Đồng Xoài và TP Hồ Chí Minh, Bình Dương, Đồng Nai…Đất
-            nền Thuận Hoà Lucky Home hứa hẹn sẽ là nơi an cư, cũng như đầu tư
-            cực kì lí tưởng với tiềm năng sinh lời lớn.
-          </Text>
+          <Text style={styles.textDescription}>{this.props.description}</Text>
         </View>
       </View>
     );
