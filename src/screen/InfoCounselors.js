@@ -2,29 +2,37 @@ import React, {Component} from 'react';
 import {Text, View, StyleSheet, Image} from 'react-native';
 import {height} from '../component/Dimensions';
 import CardDescription from '../component/cardcomponent/CardDescription';
-
-export default class InfoCounselors extends Component {
+import {connect} from 'react-redux';
+import {actionCreator} from '../redux/action/actionCreator';
+class InfoCounselors extends Component {
+  componentDidMount() {
+    this.props.fetchDataCounselorFindByID(this.props.route.params._id);
+  }
   render() {
+    const {
+      full_name,
+      address,
+      description,
+      image,
+      code_number,
+    } = this.props.counselor;
     return (
       <View style={styles.container}>
         <View style={styles.containerInfo}>
           <View style={styles.groupImageInfo}>
             <View style={styles.containerImageCounselor}>
-              <Image
-                source={require('../../assets/images/dongphu.jpg')}
-                style={styles.imgCounselor}
-              />
+              <Image source={{uri: image}} style={styles.imgCounselor} />
             </View>
           </View>
 
           <View style={styles.groupTextInfo}>
-            <Text style={styles.textName}>Võ Bình Nguyên</Text>
-            <Text style={styles.textMS}>MS: DPA-000001</Text>
-            <Text style={styles.textKV}>Khu vực: Bình Thạnh, Hồ Chí Minh</Text>
+            <Text style={styles.textName}>{full_name}</Text>
+            <Text style={styles.textMS}>{`MS: ${code_number}`}</Text>
+            <Text style={styles.textKV}>{address}</Text>
           </View>
         </View>
         <View style={styles.containerIntroduce}>
-          <CardDescription title="Giới thiệu" />
+          <CardDescription title="Giới thiệu" description={description} />
         </View>
         <View style={styles.containerContact}>
           <View style={styles.containerCall}>
@@ -137,3 +145,9 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
 });
+
+const mapStateToProps = function (state) {
+  return {counselor: state.counselor};
+};
+
+export default connect(mapStateToProps, actionCreator)(InfoCounselors);

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, ScrollView} from 'react-native';
+import {View, StyleSheet, ScrollView, Text} from 'react-native';
+import {height} from '../component/Dimensions';
 import Header from '../component/Header';
 import Title from '../component/Title';
 import ListDuAn from '../component/ListDuAn';
@@ -11,12 +12,24 @@ import {actionCreator} from '../redux/action/actionCreator';
 class Home extends Component {
   componentDidMount() {
     this.props.fetchDataProjects();
+    this.props.fetchDataCounselor();
   }
+  renderHeader = () => {
+    if (this.props.projects[1]) {
+      return <Header imgs={this.props.projects[1].hinh_anh} />;
+    }
+    return (
+      <View style={styles.viewLoad}>
+        <Text>load</Text>
+      </View>
+    );
+  };
   render() {
+    // console.log(this.props.projects[1].hinh_anh);
     return (
       <View style={styles.container}>
         <ScrollView>
-          <Header />
+          {this.renderHeader()}
           <Title title="Dự án" seeMore="Xem thêm >" />
           <ListDuAn navigation={this.props.navigation} />
           <Title title="Tư vấn viên" seeMore="Xem thêm >" />
@@ -34,10 +47,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#ffffff',
   },
+  viewLoad: {
+    height: height / 3.5,
+  },
 });
 
 const mapStateToProps = function (state) {
-  return {projects: state};
+  return {projects: state.projects};
 };
 
 export default connect(mapStateToProps, actionCreator)(Home);

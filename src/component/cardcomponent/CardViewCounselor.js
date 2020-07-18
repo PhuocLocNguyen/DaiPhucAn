@@ -8,11 +8,13 @@ export default class CardViewCounselor extends Component {
       <View style={styles.container}>
         <View style={styles.containerImageCounselor}>
           <Image
-            source={require('../../../assets/images/dongphu.jpg')}
+            source={{
+              uri: this.props.img,
+            }}
             style={styles.imgCounselor}
           />
         </View>
-        <Text style={styles.txtName}>Loc</Text>
+        <Text style={styles.txtName}>{this.props.name}</Text>
       </View>
     );
   }

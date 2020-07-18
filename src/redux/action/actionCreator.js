@@ -8,15 +8,15 @@ const axiosInstance = axios.create({
 
 const Endpoint = EndpointFactory(axiosInstance);
 
-const projectEndPoint = new Endpoint('/project');
-
 function fetchDataProjects() {
+  const projectEndPoint = new Endpoint('/project');
   return (dispatch) => {
     projectEndPoint
       .get()
       .then((reponse) => {
         const data = reponse.data;
         const {success, projects} = data;
+        // console.log(projects[1]._id);
         if (success && projects) {
           dispatch({type: actionType.FETCH_DATA_PROJECT, projects});
         }
@@ -34,7 +34,39 @@ function fetchDataProjectFindByID(_id) {
         const data = reponse.data;
         const {success, project} = data;
         if (success && project) {
-          dispatch({type: actionType.FIND_BY_ID, project});
+          dispatch({type: actionType.FIND_BY_ID_PROJECT, project});
+        }
+      })
+      .catch((error) => console.log(error.message));
+  };
+}
+//----counselor-------------
+function fetchDataCounselor() {
+  const projectEndPoint = new Endpoint('/counselor');
+  return (dispatch) => {
+    projectEndPoint
+      .get()
+      .then((reponse) => {
+        const data = reponse.data;
+        const {success, counselors} = data;
+        if (success && counselors) {
+          dispatch({type: actionType.FETCH_DATA_COUNSELOR, counselors});
+        }
+      })
+      .catch((error) => console.log(error.message));
+  };
+}
+
+function fetchDataCounselorFindByID(_id) {
+  const counselorFindByIDEndPoint = new Endpoint('/counselor/' + _id);
+  return (dispatch) => {
+    counselorFindByIDEndPoint
+      .get()
+      .then((reponse) => {
+        const data = reponse.data;
+        const {success, counselor} = data;
+        if (success && counselor) {
+          dispatch({type: actionType.FIND_BY_ID_COUNSELOR, counselor});
         }
       })
       .catch((error) => console.log(error.message));
@@ -44,4 +76,6 @@ function fetchDataProjectFindByID(_id) {
 export const actionCreator = {
   fetchDataProjects,
   fetchDataProjectFindByID,
+  fetchDataCounselor,
+  fetchDataCounselorFindByID,
 };
