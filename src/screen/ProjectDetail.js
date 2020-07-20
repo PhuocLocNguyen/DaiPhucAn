@@ -14,7 +14,6 @@ class ProjectDetail extends Component {
   }
   render() {
     const {mo_ta} = this.props.project;
-    //console.log(this.props.project);
     return (
       <View style={styles.container}>
         <ScrollView>

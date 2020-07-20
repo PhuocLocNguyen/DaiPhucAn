@@ -4,16 +4,17 @@ import {height} from '../Dimensions';
 
 export default class CardViewNews extends Component {
   render() {
+    const {title, description, images} = this.props.news;
     return (
       <View style={styles.container}>
-        <Image style={styles.img} source={this.props.img} />
+        <Image style={styles.img} source={{uri: images[0]}} />
         <View style={styles.groupTxtTitle}>
           <View style={styles.containerTxtTitle}>
             <Text
               style={styles.txtTitle}
               numberOfLines={1}
               ellipsizeMode="tail">
-              {this.props.title}
+              {title}
             </Text>
           </View>
           <View style={styles.containerTxtContent}>
@@ -21,7 +22,7 @@ export default class CardViewNews extends Component {
               style={styles.txtContent}
               numberOfLines={2}
               ellipsizeMode="tail">
-              {this.props.address}
+              {description}
             </Text>
           </View>
         </View>

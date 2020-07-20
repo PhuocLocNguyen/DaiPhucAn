@@ -2,15 +2,12 @@ import React, {Component} from 'react';
 import {View, StyleSheet} from 'react-native';
 import Home from './src/screen/Home';
 import ProjectDetail from './src/screen/ProjectDetail';
-import CardProjectDetail from './src/component/cardcomponent/CardProjectDetail';
-import CardLocation from './src/component/cardcomponent/CardLocation';
-import Test from './src/component/cardcomponent/Test';
 import InfoCounselors from './src/screen/InfoCounselors';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {Provider} from 'react-redux';
 import store from './src/redux/store';
-import ListDuAn from './src/component/ListDuAn';
+import NewsDetail from './src/screen/NewsDetail';
 const Stack = createStackNavigator();
 
 export default class App extends Component {
@@ -23,6 +20,7 @@ export default class App extends Component {
               <Stack.Screen name="Home" component={Home} />
               <Stack.Screen name="ProjectDetail" component={ProjectDetail} />
               <Stack.Screen name="InfoCounselors" component={InfoCounselors} />
+              <Stack.Screen name="NewsDetail" component={NewsDetail} />
             </Stack.Navigator>
           </NavigationContainer>
         </Provider>

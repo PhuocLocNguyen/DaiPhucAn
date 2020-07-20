@@ -41,7 +41,7 @@ function fetchDataProjectFindByID(_id) {
   };
 }
 //----counselor-------------
-function fetchDataCounselor() {
+function fetchDataCounselors() {
   const projectEndPoint = new Endpoint('/counselor');
   return (dispatch) => {
     projectEndPoint
@@ -72,10 +72,43 @@ function fetchDataCounselorFindByID(_id) {
       .catch((error) => console.log(error.message));
   };
 }
+//----news-------------
+function fetchDataNews() {
+  const newsEndPoint = new Endpoint('/news');
+  return (dispatch) => {
+    newsEndPoint
+      .get()
+      .then((reponse) => {
+        const data = reponse.data;
+        const {success, news} = data;
+        if (success && news) {
+          dispatch({type: actionType.FETCH_DATA_NEWS, listNews: news});
+        }
+      })
+      .catch((error) => console.log(error.message));
+  };
+}
 
+function fetchDataNewsFindByID(_id) {
+  const newsFindByIDEndPoint = new Endpoint('/news/' + _id);
+  return (dispatch) => {
+    newsFindByIDEndPoint
+      .get()
+      .then((reponse) => {
+        const data = reponse.data;
+        const {success, news} = data;
+        if (success && news) {
+          dispatch({type: actionType.FIND_BY_ID_NEWS, news});
+        }
+      })
+      .catch((error) => console.log(error.message));
+  };
+}
 export const actionCreator = {
   fetchDataProjects,
   fetchDataProjectFindByID,
-  fetchDataCounselor,
+  fetchDataCounselors,
   fetchDataCounselorFindByID,
+  fetchDataNews,
+  fetchDataNewsFindByID,
 };

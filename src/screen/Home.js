@@ -5,14 +5,15 @@ import Header from '../component/Header';
 import Title from '../component/Title';
 import ListDuAn from '../component/ListDuAn';
 import ListCounselors from '../component/ListCounselors';
-import ListNews from '../component/ListNews';
+import ListFirstNews from '../component/ListFirstNews';
 import {connect} from 'react-redux';
 import {actionCreator} from '../redux/action/actionCreator';
 
 class Home extends Component {
   componentDidMount() {
     this.props.fetchDataProjects();
-    this.props.fetchDataCounselor();
+    this.props.fetchDataCounselors();
+    this.props.fetchDataNews();
   }
   renderHeader = () => {
     if (this.props.projects[1]) {
@@ -25,7 +26,6 @@ class Home extends Component {
     );
   };
   render() {
-    // console.log(this.props.projects[1].hinh_anh);
     return (
       <View style={styles.container}>
         <ScrollView>
@@ -35,7 +35,7 @@ class Home extends Component {
           <Title title="Tư vấn viên" seeMore="Xem thêm >" />
           <ListCounselors navigation={this.props.navigation} />
           <Title title="Tin Tức" seeMore="Xem thêm >" />
-          {/* <ListNews /> */}
+          <ListFirstNews navigation={this.props.navigation} />
         </ScrollView>
       </View>
     );
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = function (state) {
-  return {projects: state.projects};
+  return {projects: state.projects, listNews: state.listNews};
 };
 
 export default connect(mapStateToProps, actionCreator)(Home);
