@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, Image} from 'react-native';
+import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import {height} from '../component/Dimensions';
 import CardDescription from '../component/cardcomponent/CardDescription';
 import {connect} from 'react-redux';
 import {actionCreator} from '../redux/action/actionCreator';
+import Communications from 'react-native-communications';
 class InfoCounselors extends Component {
   componentDidMount() {
     this.props.fetchDataCounselorFindByID(this.props.route.params._id);
@@ -36,10 +37,16 @@ class InfoCounselors extends Component {
         </View>
         <View style={styles.containerContact}>
           <View style={styles.containerCall}>
-            <Text style={styles.textCall}>Gọi điện</Text>
+            <TouchableOpacity
+              onPress={() => Communications.phonecall('0123456789', true)}>
+              <Text style={styles.textCall}>Gọi điện</Text>
+            </TouchableOpacity>
           </View>
+
           <View style={styles.containerMessage}>
-            <Text style={styles.textMessage}>Nhắn tin</Text>
+            <TouchableOpacity onPress={() => Communications.text('0123456789')}>
+              <Text style={styles.textMessage}>Nhắn tin</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>

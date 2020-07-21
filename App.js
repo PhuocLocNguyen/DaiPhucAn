@@ -17,7 +17,11 @@ export default class App extends Component {
         <Provider store={store}>
           <NavigationContainer>
             <Stack.Navigator>
-              <Stack.Screen name="Home" component={Home} />
+              <Stack.Screen
+                name="Home"
+                component={Home}
+                options={{headerShown: false}}
+              />
               <Stack.Screen name="ProjectDetail" component={ProjectDetail} />
               <Stack.Screen name="InfoCounselors" component={InfoCounselors} />
               <Stack.Screen name="NewsDetail" component={NewsDetail} />
