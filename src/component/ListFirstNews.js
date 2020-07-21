@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, TouchableOpacity} from 'react-native';
-import {height} from './Dimensions';
+import {verticalScale} from './function/Dimensions';
 import CardViewNews from './cardcomponent/CardViewNews';
 import {connect} from 'react-redux';
 import {actionCreator} from '../redux/action/actionCreator';
@@ -11,7 +11,7 @@ class ListFirstNews extends Component {
     return (
       <View style={styles.container}>
         {listNews.map((news, index) => {
-          if (index < 4) {
+          if (index < 3) {
             return (
               <TouchableOpacity
                 key={news._id}
@@ -31,10 +31,7 @@ class ListFirstNews extends Component {
 }
 const styles = StyleSheet.create({
   container: {
-    height,
-  },
-  container1: {
-    flex: 1,
+    height: verticalScale(381),
   },
 });
 

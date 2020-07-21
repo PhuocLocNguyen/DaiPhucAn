@@ -1,6 +1,12 @@
 import React, {Component} from 'react';
 import {Text, View, Image, StyleSheet} from 'react-native';
-import {height, width} from '../Dimensions';
+import {
+  height,
+  width,
+  scale,
+  verticalScale,
+  moderateScale,
+} from '../function/Dimensions';
 
 export default class CardViewProject extends Component {
   render() {
@@ -32,12 +38,12 @@ export default class CardViewProject extends Component {
 }
 const styles = StyleSheet.create({
   container: {
-    height: height / 3.05,
-    width: width / 1.6,
-    backgroundColor: 'white',
+    height: verticalScale(210),
+    width: scale(240),
+    backgroundColor: '#4C796B',
     borderRadius: 10,
     overflow: 'hidden',
-    marginLeft: 5,
+    marginLeft: verticalScale(7),
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -45,25 +51,26 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-    elevation: 5,
+    elevation: 2,
   },
   imgProject: {
     resizeMode: 'stretch',
-    width: width / 1.6,
+    width: scale(240),
     flex: 5,
   },
   groupTxtTitle: {
     flex: 2,
-    marginLeft: 10,
-    marginRight: 10,
+    marginHorizontal: verticalScale(8),
   },
   txtTitleProject: {
     flex: 1,
-    fontSize: 15,
+    fontSize: moderateScale(17),
     fontWeight: '500',
+    color: 'white',
   },
   txtaddress: {
     flex: 2,
-    fontSize: 13,
+    fontSize: moderateScale(14),
+    color: 'white',
   },
 });

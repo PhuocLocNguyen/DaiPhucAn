@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet} from 'react-native';
-import {height} from '../Dimensions';
+import {height} from '../function/Dimensions';
 import {connect} from 'react-redux';
 import {actionCreator} from '../../redux/action/actionCreator';
 class CardProjectbasicInformation extends Component {

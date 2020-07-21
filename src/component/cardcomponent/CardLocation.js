@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet, Image} from 'react-native';
-import {height} from '../Dimensions';
+import {height} from '../function/Dimensions';
 import MapView, {PROVIDER_GOOGLE, Marker, Callout} from 'react-native-maps';
 
 export default class CardLocation extends Component {

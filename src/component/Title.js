@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet} from 'react-native';
-import {height} from './Dimensions';
+import {verticalScale, moderateScale} from './function/Dimensions';
 
 export default class Title extends Component {
   render() {
@@ -14,11 +14,13 @@ export default class Title extends Component {
 }
 const styles = StyleSheet.create({
   container: {
-    height: height / 15,
+    height: verticalScale(40),
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    margin: 5,
+    borderColor: '#4C796B',
+    borderWidth: 0.8,
+    margin: verticalScale(7),
     borderRadius: 8,
     shadowColor: '#000',
     shadowOffset: {
@@ -26,14 +28,14 @@ const styles = StyleSheet.create({
       height: 0.5,
     },
     shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 2.5,
+    shadowRadius: verticalScale(3.84),
+    elevation: 0.7,
   },
   text: {
-    marginLeft: 10,
-    fontSize: 17,
+    marginLeft: verticalScale(10),
+    fontSize: moderateScale(17),
   },
   icon: {
-    marginRight: 10,
+    marginRight: verticalScale(10),
   },
 });

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
-import {height} from '../component/Dimensions';
+import {height} from '../component/function/Dimensions';
 import CardDescription from '../component/cardcomponent/CardDescription';
 import {connect} from 'react-redux';
 import {actionCreator} from '../redux/action/actionCreator';
@@ -16,6 +16,7 @@ class InfoCounselors extends Component {
       description,
       image,
       code_number,
+      phone,
     } = this.props.counselor;
     return (
       <View style={styles.container}>
@@ -38,13 +39,13 @@ class InfoCounselors extends Component {
         <View style={styles.containerContact}>
           <View style={styles.containerCall}>
             <TouchableOpacity
-              onPress={() => Communications.phonecall('0123456789', true)}>
+              onPress={() => Communications.phonecall(phone, true)}>
               <Text style={styles.textCall}>Gọi điện</Text>
             </TouchableOpacity>
           </View>
 
           <View style={styles.containerMessage}>
-            <TouchableOpacity onPress={() => Communications.text('0123456789')}>
+            <TouchableOpacity onPress={() => Communications.text(phone)}>
               <Text style={styles.textMessage}>Nhắn tin</Text>
             </TouchableOpacity>
           </View>

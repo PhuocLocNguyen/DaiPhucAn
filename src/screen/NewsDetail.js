@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet, Image, ScrollView} from 'react-native';
-import {height} from '../component/Dimensions';
+import {height} from '../component/function/Dimensions';
 
 export default class NewsDetail extends Component {
   render() {

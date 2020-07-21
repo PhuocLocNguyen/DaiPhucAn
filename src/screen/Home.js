@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, ScrollView, Text} from 'react-native';
-import {height} from '../component/Dimensions';
+import {verticalScale} from '../component/function/Dimensions';
 import Header from '../component/Header';
 import Title from '../component/Title';
-import ListDuAn from '../component/ListDuAn';
+import ListProjects from '../component/ListProjects';
 import ListCounselors from '../component/ListCounselors';
 import ListFirstNews from '../component/ListFirstNews';
 import {connect} from 'react-redux';
@@ -31,7 +31,7 @@ class Home extends Component {
         <ScrollView>
           {this.renderHeader()}
           <Title title="Dự án" seeMore="Xem thêm >" />
-          <ListDuAn navigation={this.props.navigation} />
+          <ListProjects navigation={this.props.navigation} />
           <Title title="Tư vấn viên" seeMore="Xem thêm >" />
           <ListCounselors navigation={this.props.navigation} />
           <Title title="Tin Tức" seeMore="Xem thêm >" />
@@ -45,10 +45,10 @@ class Home extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: 'white',
   },
   viewLoad: {
-    height: height / 3.5,
+    height: verticalScale(250),
   },
 });
 

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, FlatList, TouchableOpacity} from 'react-native';
 import CardViewCounselor from './cardcomponent/CardViewCounselor';
-import {height} from './Dimensions';
+import {verticalScale} from './function/Dimensions';
 import {connect} from 'react-redux';
 import {actionCreator} from '../redux/action/actionCreator';
 class ListCounselors extends Component {
@@ -32,7 +32,7 @@ class ListCounselors extends Component {
 }
 const styles = StyleSheet.create({
   container: {
-    height: height / 4.9,
+    height: verticalScale(120),
   },
 });
 

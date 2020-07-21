@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View, Image, StyleSheet} from 'react-native';
-import {height} from '../Dimensions';
+import {verticalScale, moderateScale} from '../function/Dimensions';
 
 export default class CardViewNews extends Component {
   render() {
@@ -8,18 +8,18 @@ export default class CardViewNews extends Component {
     return (
       <View style={styles.container}>
         <Image style={styles.img} source={{uri: images[0]}} />
-        <View style={styles.groupTxtTitle}>
-          <View style={styles.containerTxtTitle}>
+        <View style={styles.groupTextTitle}>
+          <View style={styles.containerTextTitle}>
             <Text
               style={styles.txtTitle}
-              numberOfLines={1}
+              numberOfLines={3}
               ellipsizeMode="tail">
               {title}
             </Text>
           </View>
-          <View style={styles.containerTxtContent}>
+          <View style={styles.containerTextContent}>
             <Text
-              style={styles.txtContent}
+              style={styles.textContent}
               numberOfLines={2}
               ellipsizeMode="tail">
               {description}
@@ -32,12 +32,13 @@ export default class CardViewNews extends Component {
 }
 const styles = StyleSheet.create({
   container: {
-    height: height / 5,
+    height: verticalScale(120),
     flexDirection: 'row',
-    backgroundColor: 'white',
+    backgroundColor: '#4C796B',
     borderRadius: 10,
     overflow: 'hidden',
-    margin: 10,
+    marginHorizontal: moderateScale(7),
+    marginBottom: moderateScale(7),
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -45,35 +46,35 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-    elevation: 5,
+    elevation: 2,
   },
   img: {
     resizeMode: 'stretch',
-    width: height / 5,
-    height: height / 5,
-    flex: 1.15,
+    flex: 1.5,
   },
-  groupTxtTitle: {
-    marginLeft: 10,
-    marginRight: 10,
+  groupTextTitle: {
+    marginHorizontal: moderateScale(10),
     flex: 2,
   },
-  containerTxtTitle: {
+  containerTextTitle: {
     justifyContent: 'center',
     alignItems: 'center',
-    flex: 1,
+    flex: 1.5,
     borderBottomWidth: 0.3,
+    borderColor: 'white',
   },
-  containerTxtContent: {
-    flex: 2,
+  containerTextContent: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
   txtTitle: {
-    fontSize: 18,
+    fontSize: moderateScale(17),
     fontWeight: '500',
+    color: 'white',
   },
-  txtContent: {
-    fontSize: 14,
+  textContent: {
+    fontSize: moderateScale(14),
+    color: 'white',
   },
 });

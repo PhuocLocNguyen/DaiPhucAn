@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, FlatList, TouchableOpacity} from 'react-native';
 import CardViewProject from './cardcomponent/CardViewProject';
-import {height} from './Dimensions';
+import {verticalScale} from './function/Dimensions';
 import {connect} from 'react-redux';
 import {actionCreator} from '../redux/action/actionCreator';
 
-class ListDuAn extends Component {
+class ListProjects extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -38,7 +38,7 @@ class ListDuAn extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    height: height / 3,
+    height: verticalScale(210),
   },
 });
 
@@ -46,4 +46,4 @@ const mapStateToProps = function (state) {
   return {projects: state.projects};
 };
 
-export default connect(mapStateToProps, actionCreator)(ListDuAn);
+export default connect(mapStateToProps, actionCreator)(ListProjects);

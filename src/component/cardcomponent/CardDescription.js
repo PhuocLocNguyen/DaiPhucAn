@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet} from 'react-native';
-import {height} from '../Dimensions';
+import {height} from '../function/Dimensions';
 
 export default class CardDescription extends Component {
   render() {

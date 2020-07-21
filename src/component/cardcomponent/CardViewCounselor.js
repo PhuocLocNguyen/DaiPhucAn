@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet, Image} from 'react-native';
-import {height} from '../Dimensions';
+import {verticalScale, moderateScale} from '../function/Dimensions';
 
 export default class CardViewCounselor extends Component {
   render() {
@@ -14,36 +14,40 @@ export default class CardViewCounselor extends Component {
             style={styles.imgCounselor}
           />
         </View>
-        <Text style={styles.txtName}>{this.props.name}</Text>
+        <View style={styles.containerTextName}>
+          <Text style={styles.textName}>{this.props.name}</Text>
+        </View>
       </View>
     );
   }
 }
 const styles = StyleSheet.create({
   container: {
-    height: height / 5,
-    width: height / 5,
-    justifyContent: 'center',
+    height: verticalScale(120),
+    width: verticalScale(100),
+    marginLeft: moderateScale(7),
     alignItems: 'center',
-    marginVertical: 5,
   },
   containerImageCounselor: {
-    flex: 4,
-    height: height / 6,
-    width: height / 6,
-    borderRadius: height / 3,
+    height: verticalScale(100),
+    width: verticalScale(100),
+    borderRadius: verticalScale(50),
     justifyContent: 'center',
     alignItems: 'center',
-    borderWidth: 1,
-    borderColor: '#134074',
+    borderWidth: 1.2,
+    borderColor: '#4C796B',
+  },
+  containerTextName: {
+    height: verticalScale(20),
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   imgCounselor: {
-    width: height / 6.5,
-    height: height / 6.5,
-    borderRadius: height / 4,
+    width: verticalScale(90),
+    height: verticalScale(90),
+    borderRadius: verticalScale(45),
   },
   txtName: {
-    flex: 1,
-    fontSize: height / 37,
+    fontSize: moderateScale(15),
   },
 });
