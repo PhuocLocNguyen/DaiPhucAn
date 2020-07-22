@@ -18,6 +18,7 @@ export default class CardDescription extends Component {
 }
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     marginHorizontal: 7,
     marginBottom: 7,
     backgroundColor: 'white',

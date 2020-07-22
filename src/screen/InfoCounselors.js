@@ -1,10 +1,18 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
-import {height} from '../component/function/Dimensions';
+import {
+  Text,
+  View,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+} from 'react-native';
+import {verticalScale, moderateScale} from '../component/function/Dimensions';
 import CardDescription from '../component/cardcomponent/CardDescription';
 import {connect} from 'react-redux';
 import {actionCreator} from '../redux/action/actionCreator';
 import Communications from 'react-native-communications';
+import {Icon} from 'react-native-elements';
 class InfoCounselors extends Component {
   componentDidMount() {
     this.props.fetchDataCounselorFindByID(this.props.route.params._id);
@@ -20,36 +28,39 @@ class InfoCounselors extends Component {
     } = this.props.counselor;
     return (
       <View style={styles.container}>
-        <View style={styles.containerInfo}>
-          <View style={styles.groupImageInfo}>
-            <View style={styles.containerImageCounselor}>
-              <Image source={{uri: image}} style={styles.imgCounselor} />
+        <ScrollView>
+          <View style={styles.containerInfo}>
+            <View style={styles.groupImageInfo}>
+              <View style={styles.containerImageCounselor}>
+                <Image source={{uri: image}} style={styles.imgCounselor} />
+              </View>
+            </View>
+
+            <View style={styles.groupTextInfo}>
+              <Text style={styles.textName}>{full_name}</Text>
+              <Text style={styles.textMS}>{`MS: ${code_number}`}</Text>
+              <Text style={styles.textKV}>{address}</Text>
             </View>
           </View>
-
-          <View style={styles.groupTextInfo}>
-            <Text style={styles.textName}>{full_name}</Text>
-            <Text style={styles.textMS}>{`MS: ${code_number}`}</Text>
-            <Text style={styles.textKV}>{address}</Text>
+          <View style={styles.containerIntroduce}>
+            <CardDescription title="Giới thiệu" description={description} />
           </View>
-        </View>
-        <View style={styles.containerIntroduce}>
-          <CardDescription title="Giới thiệu" description={description} />
-        </View>
-        <View style={styles.containerContact}>
-          <View style={styles.containerCall}>
+          <View style={styles.containerContact}>
             <TouchableOpacity
+              style={styles.containerTouchable}
               onPress={() => Communications.phonecall(phone, true)}>
-              <Text style={styles.textCall}>Gọi điện</Text>
+              <Icon name="phone" color="#517fa4" />
+              <Text style={styles.textContact}>Gọi điện</Text>
             </TouchableOpacity>
-          </View>
 
-          <View style={styles.containerMessage}>
-            <TouchableOpacity onPress={() => Communications.text(phone)}>
-              <Text style={styles.textMessage}>Nhắn tin</Text>
+            <TouchableOpacity
+              style={styles.containerTouchable}
+              onPress={() => Communications.text(phone)}>
+              <Icon name="message" color="#517fa4" />
+              <Text style={styles.textContact}>Nhắn tin</Text>
             </TouchableOpacity>
           </View>
-        </View>
+        </ScrollView>
       </View>
     );
   }
@@ -59,8 +70,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   containerInfo: {
-    flex: 5,
-    margin: 8,
+    height: verticalScale(285),
+    margin: 7,
     backgroundColor: 'white',
     shadowColor: '#000',
     shadowOffset: {
@@ -69,7 +80,7 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-    elevation: 5,
+    elevation: 2,
   },
   groupImageInfo: {
     flex: 1,
@@ -78,18 +89,18 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   containerImageCounselor: {
-    height: height / 4,
-    width: height / 4,
-    borderRadius: height / 3,
+    height: verticalScale(150),
+    width: verticalScale(150),
+    borderRadius: verticalScale(75),
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#134074',
+    borderColor: '#4C796B',
   },
   imgCounselor: {
-    width: height / 4.3,
-    height: height / 4.3,
-    borderRadius: height / 4,
+    width: verticalScale(140),
+    height: verticalScale(140),
+    borderRadius: verticalScale(70),
   },
   groupTextInfo: {
     justifyContent: 'center',
@@ -97,60 +108,41 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   textName: {
-    fontSize: height / 30,
+    fontSize: moderateScale(22),
     fontWeight: 'bold',
   },
   textMS: {
-    fontSize: height / 35,
+    fontSize: moderateScale(18),
     fontWeight: 'bold',
   },
   textKV: {
-    fontSize: height / 40,
-  },
-  containerIntroduce: {
-    flex: 4,
+    fontSize: moderateScale(15),
   },
   containerContact: {
+    height: verticalScale(45),
+    flexDirection: 'row',
+    marginHorizontal: 7,
+    marginBottom: 7,
+    backgroundColor: 'white',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 2,
+  },
+  containerTouchable: {
     flex: 1,
     flexDirection: 'row',
-  },
-  containerCall: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  containerMessage: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  textCall: {
-    paddingVertical: 12,
-    paddingHorizontal: 55,
-    backgroundColor: 'blue',
-    color: 'white',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-  },
-  textMessage: {
-    paddingVertical: 12,
-    paddingHorizontal: 55,
-    backgroundColor: 'blue',
-    color: 'white',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
+
+  textContact: {
+    fontSize: moderateScale(15),
+    marginLeft: 5,
   },
 });
 
