@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet} from 'react-native';
-import {height} from '../function/Dimensions';
+import {verticalScale, moderateScale} from '../function/Dimensions';
 
 export default class CardDescription extends Component {
   render() {
@@ -18,8 +18,8 @@ export default class CardDescription extends Component {
 }
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 8,
-    marginBottom: 8,
+    marginHorizontal: 7,
+    marginBottom: 7,
     backgroundColor: 'white',
     shadowColor: '#000',
     shadowOffset: {
@@ -28,22 +28,22 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-    elevation: 5,
+    elevation: 2,
   },
   titleInformation: {
-    height: height / 14,
+    height: verticalScale(43.3),
     justifyContent: 'center',
   },
   groupInformation: {
     backgroundColor: '#EEF4ED',
   },
   textInformation: {
-    fontSize: 15,
-    marginHorizontal: 5,
+    fontSize: moderateScale(15),
+    marginHorizontal: 10,
   },
   textDescription: {
-    fontSize: 14,
-    marginHorizontal: 5,
+    fontSize: moderateScale(15),
+    marginHorizontal: 10,
     marginVertical: 7,
   },
 });

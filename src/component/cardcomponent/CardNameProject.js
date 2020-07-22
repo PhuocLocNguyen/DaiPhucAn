@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet} from 'react-native';
-import {height} from '../function/Dimensions';
+import {verticalScale, moderateScale} from '../function/Dimensions';
 import {connect} from 'react-redux';
 import {actionCreator} from '../../redux/action/actionCreator';
 class CardNameProject extends Component {
@@ -29,8 +29,8 @@ class CardNameProject extends Component {
 }
 const styles = StyleSheet.create({
   container: {
-    height: height / 4.75,
-    margin: 8,
+    height: verticalScale(130),
+    margin: 7,
     backgroundColor: 'white',
     shadowColor: '#000',
     shadowOffset: {
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-    elevation: 5,
+    elevation: 2,
   },
   GroupTextTitle: {
     flex: 1,
@@ -67,14 +67,15 @@ const styles = StyleSheet.create({
   },
   textName: {
     fontSize: 20,
-    marginHorizontal: 5,
+    marginHorizontal: 10,
   },
   textTitle: {
-    fontSize: 15,
+    fontSize: moderateScale(15),
+    marginHorizontal: 10,
   },
   textAddress: {
-    fontSize: 14,
-    marginHorizontal: 5,
+    fontSize: moderateScale(15),
+    marginHorizontal: 10,
   },
 });
 

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, Image} from 'react-native';
-import {height} from '../function/Dimensions';
-import MapView, {PROVIDER_GOOGLE, Marker, Callout} from 'react-native-maps';
+import {Text, View, StyleSheet} from 'react-native';
+import {verticalScale, moderateScale} from '../function/Dimensions';
+import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 
 export default class CardLocation extends Component {
   render() {
@@ -41,8 +41,9 @@ export default class CardLocation extends Component {
 }
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 8,
-    marginBottom: 8,
+    height: verticalScale(260),
+    marginHorizontal: 7,
+    marginBottom: 7,
     backgroundColor: 'white',
     justifyContent: 'flex-end',
     shadowColor: '#000',
@@ -52,33 +53,21 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-    elevation: 5,
+    elevation: 2,
   },
   titleInformation: {
-    height: height / 14,
+    flex: 1,
     justifyContent: 'center',
   },
   groupInformation: {
-    height: height / 3,
+    flex: 5,
     backgroundColor: '#EEF4ED',
   },
   textInformation: {
-    fontSize: 15,
-    marginHorizontal: 5,
+    fontSize: moderateScale(15),
+    marginHorizontal: 10,
   },
   map: {
     ...StyleSheet.absoluteFillObject,
-  },
-  viewCallout: {
-    width: 100,
-    height: 100,
-  },
-  textCallout: {
-    width: 100,
-    height: 100,
-  },
-  imgCallout: {
-    width: 50,
-    height: 50,
   },
 });

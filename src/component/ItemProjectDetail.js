@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet} from 'react-native';
+import {verticalScale} from './function/Dimensions';
 
 export default class ItemProjectDetail extends Component {
   render() {
@@ -27,15 +28,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   textForm: {
-    fontSize: 14,
-    marginHorizontal: 5,
+    fontSize: verticalScale(15),
+    marginHorizontal: 10,
   },
   containerTextInformation: {
     flex: 1,
     justifyContent: 'center',
   },
   textInformation: {
-    fontSize: 15,
-    marginHorizontal: 5,
+    fontSize: verticalScale(15),
+    marginHorizontal: 10,
   },
 });

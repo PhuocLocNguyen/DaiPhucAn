@@ -1,12 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View, Image, StyleSheet} from 'react-native';
-import {
-  height,
-  width,
-  scale,
-  verticalScale,
-  moderateScale,
-} from '../function/Dimensions';
+import {scale, verticalScale, moderateScale} from '../function/Dimensions';
 
 export default class CardViewProject extends Component {
   render() {
@@ -60,7 +54,7 @@ const styles = StyleSheet.create({
   },
   groupTxtTitle: {
     flex: 2,
-    marginHorizontal: verticalScale(8),
+    marginHorizontal: verticalScale(7),
   },
   txtTitleProject: {
     flex: 1,

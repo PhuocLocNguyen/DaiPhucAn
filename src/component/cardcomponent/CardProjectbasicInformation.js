@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet} from 'react-native';
-import {height} from '../function/Dimensions';
+import {verticalScale, moderateScale} from '../function/Dimensions';
 import {connect} from 'react-redux';
 import {actionCreator} from '../../redux/action/actionCreator';
 class CardProjectbasicInformation extends Component {
@@ -43,9 +43,9 @@ class CardProjectbasicInformation extends Component {
 }
 const styles = StyleSheet.create({
   container: {
-    height: height / 3.5,
-    marginHorizontal: 8,
-    marginBottom: 8,
+    height: verticalScale(173.3),
+    marginHorizontal: 7,
+    marginBottom: 7,
     backgroundColor: 'white',
     shadowColor: '#000',
     shadowOffset: {
@@ -54,12 +54,12 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-    elevation: 5,
+    elevation: 2,
   },
   titleInformation: {
     flex: 1,
     justifyContent: 'center',
-    marginLeft: 5,
+    marginLeft: 10,
   },
   groupInformation: {
     flex: 3,
@@ -74,8 +74,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   textForm: {
-    fontSize: 14,
-    marginLeft: 5,
+    fontSize: moderateScale(15),
+    marginLeft: 10,
   },
   groupTextInformation: {
     flex: 1,
@@ -83,8 +83,8 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0.3,
   },
   textInformation: {
-    fontSize: 15,
-    marginRight: 5,
+    fontSize: moderateScale(15),
+    marginRight: 10,
   },
 });
 const mapStateToProps = function (state) {
