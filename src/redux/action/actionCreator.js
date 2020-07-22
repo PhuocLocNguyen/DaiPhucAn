@@ -3,7 +3,7 @@ import axios from 'axios';
 import EndpointFactory from 'axios-endpoints';
 
 const axiosInstance = axios.create({
-  baseURL: 'http://192.168.1.4:4000',
+  baseURL: 'https://severnodedaiphucan.herokuapp.com',
 });
 
 const Endpoint = EndpointFactory(axiosInstance);
