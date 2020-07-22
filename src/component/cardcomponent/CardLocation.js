@@ -41,7 +41,7 @@ export default class CardLocation extends Component {
 }
 const styles = StyleSheet.create({
   container: {
-    height: verticalScale(260),
+    height: verticalScale(346.6),
     marginHorizontal: 7,
     marginBottom: 7,
     backgroundColor: 'white',
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   groupInformation: {
-    flex: 5,
+    flex: 7,
     backgroundColor: '#EEF4ED',
   },
   textInformation: {

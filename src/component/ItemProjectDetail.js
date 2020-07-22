@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet} from 'react-native';
-import {verticalScale} from './function/Dimensions';
+import {moderateScale} from './function/Dimensions';
 
 export default class ItemProjectDetail extends Component {
   render() {
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   textForm: {
-    fontSize: verticalScale(15),
+    fontSize: moderateScale(15),
     marginHorizontal: 10,
   },
   containerTextInformation: {
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   textInformation: {
-    fontSize: verticalScale(15),
+    fontSize: moderateScale(15),
     marginHorizontal: 10,
   },
 });
