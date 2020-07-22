@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet, Image, ScrollView} from 'react-native';
-import {height} from '../component/function/Dimensions';
+import {verticalScale, moderateScale} from '../component/function/Dimensions';
 
 export default class NewsDetail extends Component {
   render() {
@@ -29,22 +29,23 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   containerTitle: {
-    height: height / 9,
+    height: verticalScale(65),
     justifyContent: 'center',
     alignItems: 'center',
   },
   textTitle: {
-    fontSize: 25,
+    fontSize: moderateScale(23),
     fontWeight: 'bold',
-    marginHorizontal: 5,
+    marginHorizontal: 10,
   },
   textDescription: {
-    fontSize: 15,
-    marginHorizontal: 5,
+    fontSize: moderateScale(15),
+    marginHorizontal: 10,
   },
   img: {
     resizeMode: 'stretch',
-    height: height / 2.5,
-    margin: 5,
+    height: verticalScale(250),
+    marginHorizontal: 7,
+    marginTop: 7,
   },
 });
