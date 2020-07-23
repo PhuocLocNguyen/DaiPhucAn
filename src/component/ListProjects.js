@@ -25,7 +25,7 @@ class ListProjects extends Component {
                 <CardViewProject
                   name={item.ten_du_an}
                   address={item.vi_tri}
-                  img={item.hinh_anh[2]}
+                  img={item.hinh_anh[0]}
                 />
               </TouchableOpacity>
             </View>

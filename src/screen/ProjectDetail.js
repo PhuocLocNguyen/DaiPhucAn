@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, ScrollView} from 'react-native';
-import Header from '../component/Header';
 import CardProjectbasicInformation from '../component/cardcomponent/CardProjectbasicInformation';
 import CardNameProject from '../component/cardcomponent/CardNameProject';
 import CardProjectDetail from '../component/cardcomponent/CardProjectDetail';
@@ -8,6 +7,7 @@ import CardDescription from '../component/cardcomponent/CardDescription';
 import CardLocation from '../component/cardcomponent/CardLocation';
 import {connect} from 'react-redux';
 import {actionCreator} from '../redux/action/actionCreator';
+import CardHeader from '../component/cardcomponent/CardHeader';
 class ProjectDetail extends Component {
   componentDidMount() {
     this.props.fetchDataProjectFindByID(this.props.route.params._id);
@@ -17,7 +17,7 @@ class ProjectDetail extends Component {
     return (
       <View style={styles.container}>
         <ScrollView>
-          <Header imgs={this.props.project.hinh_anh} />
+          <CardHeader imgs={this.props.project.hinh_anh} />
           <CardNameProject />
           <CardProjectbasicInformation />
           <CardProjectDetail />

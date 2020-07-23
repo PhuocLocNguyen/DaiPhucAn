@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, Text} from 'react-native';
-import {verticalScale} from './function/Dimensions';
+import {verticalScale} from '../function/Dimensions';
 import {SliderBox} from 'react-native-image-slider-box';
 
-export default class Header extends Component {
+export default class CardHeader extends Component {
   render() {
     if (this.props.imgs) {
       return (
@@ -16,11 +16,7 @@ export default class Header extends Component {
         </View>
       );
     }
-    return (
-      <View style={styles.container}>
-        <Text>Loading</Text>
-      </View>
-    );
+    return <View style={styles.container} />;
   }
 }
 

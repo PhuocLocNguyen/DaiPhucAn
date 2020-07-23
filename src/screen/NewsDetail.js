@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   containerTitle: {
-    height: verticalScale(65),
+    height: verticalScale(75),
     justifyContent: 'center',
     alignItems: 'center',
   },

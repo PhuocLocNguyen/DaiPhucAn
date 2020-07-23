@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, ScrollView, Text} from 'react-native';
 import {verticalScale} from '../component/function/Dimensions';
-import Header from '../component/Header';
+import CardHeader from '../component/cardcomponent/CardHeader';
 import Title from '../component/Title';
 import ListProjects from '../component/ListProjects';
 import ListCounselors from '../component/ListCounselors';
@@ -17,13 +17,9 @@ class Home extends Component {
   }
   renderHeader = () => {
     if (this.props.projects[1]) {
-      return <Header imgs={this.props.projects[1].hinh_anh} />;
+      return <CardHeader imgs={this.props.projects[2].hinh_anh} />;
     }
-    return (
-      <View style={styles.viewLoad}>
-        <Text>load</Text>
-      </View>
-    );
+    return <View style={styles.viewLoad} />;
   };
   render() {
     return (
