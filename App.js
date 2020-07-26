@@ -8,6 +8,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import {Provider} from 'react-redux';
 import store from './src/redux/store';
 import NewsDetail from './src/screen/NewsDetail';
+import Deposit from './src/screen/Deposit';
+
 const Stack = createStackNavigator();
 
 export default class App extends Component {
@@ -15,7 +17,8 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <Provider store={store}>
-          <NavigationContainer>
+          <Deposit />
+          {/* <NavigationContainer>
             <Stack.Navigator>
               <Stack.Screen
                 name="Home"
@@ -26,7 +29,7 @@ export default class App extends Component {
               <Stack.Screen name="InfoCounselors" component={InfoCounselors} />
               <Stack.Screen name="NewsDetail" component={NewsDetail} />
             </Stack.Navigator>
-          </NavigationContainer>
+          </NavigationContainer> */}
         </Provider>
       </View>
     );
